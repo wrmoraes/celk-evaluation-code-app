@@ -4,7 +4,7 @@ Bem vindo.
 
 Este app foi construído para a avaliação de desenvolimento na empresa CELK SISTEMAS.
 
-**Como justificativa para o desenvolvimnto temos:**
+**Como justificativa para o desenvolvimento temos:**
 
 > A equipe de atendimento precisa informar no cadastro de cada paciente a unidade
 > federativa. Porém, previamente, será necessário cadastrar os estados.
@@ -40,7 +40,9 @@ para se adequar as definições em mais ou menos 10 Horas.
 Considero que a aplicação está dentro dos parâmetros solicitados, nas não finalizada. Como em todo desenvolvimento ainda existem as melhorias que por questão de tempo hábil, ficarão como indicações futuras
 na seção de **TODO** que será especificada posteriormente no documento.
 
-Repositório da aplicação: <https://www.google.com.br>
+**Para ver a aplicação rodando acesse: <https://celk-app-evaluation-code.herokuapp.com/>
+
+**Para acessar a documentação da API, basta logar na aplicação como administrador e acessar: <https://celk-app-evaluation-code.herokuapp.com/admin/docs>
 
 Como diz uma frase muito usada na programação :
 
