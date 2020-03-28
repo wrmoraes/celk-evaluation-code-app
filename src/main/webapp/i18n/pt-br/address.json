@@ -1,0 +1,26 @@
+{
+  "celkApp": {
+    "address": {
+      "home": {
+        "title": "Endereços",
+        "createLabel": "Criar novo Endereço",
+        "createOrEditLabel": "Criar ou editar Endereço",
+        "notFound": "Nenhum Endereço encontrado"
+      },
+      "created": "Um novo Endereço foi criado com o identificador {{ param }}",
+      "updated": "Um Endereço foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Endereço foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir o Endereço {{ id }}?"
+      },
+      "detail": {
+        "title": "Endereço"
+      },
+      "streetType": "Tipo da Rua",
+      "streetName": "Nome da Rua",
+      "number": "Número",
+      "postalCode": "CEP",
+      "county": "Município"
+    }
+  }
+}

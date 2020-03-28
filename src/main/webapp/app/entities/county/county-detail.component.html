@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="county">
+            <h2><span jhiTranslate="celkApp.county.detail.title">Município</span> {{ county.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="celkApp.county.name">Nome</span></dt>
+                <dd>
+                    <span>{{ county.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="celkApp.county.createdDate">Criado em</span></dt>
+                <dd>
+                    <span>{{ county.createdDate | date:'dd-MM-yyyy HH:mm:ss'}}</span>
+                </dd>
+                <dt><span jhiTranslate="celkApp.county.state">Estado</span></dt>
+                <dd>
+                    <div *ngIf="county.state">
+                        <a [routerLink]="['/state', county.state?.id, 'view']">{{ county.state?.name }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Voltar</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/county', county.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editar</span>
+            </button>
+        </div>
+    </div>
+</div>

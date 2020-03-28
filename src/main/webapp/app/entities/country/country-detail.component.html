@@ -1,0 +1,34 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="country">
+            <h2><span jhiTranslate="celkApp.country.detail.title">País</span> {{ country.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="celkApp.country.name">Nome</span></dt>
+                <dd>
+                    <span>{{ country.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="celkApp.country.createdDate">Criado em</span></dt>
+                <dd>
+                    <span>{{ country.createdDate | date:'dd-MM-yyyy HH:mm:ss'}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Voltar</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/country', country.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editar</span>
+            </button>
+        </div>
+    </div>
+</div>

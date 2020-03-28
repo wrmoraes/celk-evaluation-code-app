@@ -1,0 +1,73 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="celkApp.address.home.title">Endereços</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-address" [routerLink]="['/address/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="celkApp.address.home.createLabel">
+            Criar novo endereço
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="addresses?.length === 0">
+        <span jhiTranslate="celkApp.address.home.notFound">Nenhum Endereço encontrado</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="addresses?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">Código</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="streetType"><span jhiTranslate="celkApp.address.streetType">Tipo da Rua</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="streetName"><span jhiTranslate="celkApp.address.streetName">Nome da Rua</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="number"><span jhiTranslate="celkApp.address.number">Número</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="postalCode"><span jhiTranslate="celkApp.address.postalCode">Código Postal</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="county.name"><span jhiTranslate="celkApp.address.county">Município</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+                <tr *ngFor="let address of addresses ;trackBy: trackId">
+                    <td><a [routerLink]="['/address', address.id, 'view']">{{ address.id }}</a></td>
+                    <td jhiTranslate="{{ 'celkApp.StreetType.' + address.streetType }}">{{ address.streetType }}</td>
+                    <td>{{ address.streetName }}</td>
+                    <td>{{ address.number }}</td>
+                    <td>{{ address.postalCode }}</td>
+                    <td>
+                        <div *ngIf="address.county">
+                            <a [routerLink]="['/county', address.county?.id, 'view']" >{{ address.county?.name }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/address', address.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">Ver</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/address', address.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Editar</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(address)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Excluir</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

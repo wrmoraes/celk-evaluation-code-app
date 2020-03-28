@@ -1,0 +1,26 @@
+{
+  "reset": {
+    "request": {
+      "title": "Redefinir senha",
+      "form": {
+        "button": "Redefinir senha"
+      },
+      "messages": {
+        "info": "Informe o endereço de email utilizado no cadastro",
+        "success": "Verifique seu e-mail para detalhes sobre a redefinição de sua senha."
+      }
+    },
+    "finish": {
+      "title": "Redefinir senha",
+      "form": {
+        "button": "Redefinir senha"
+      },
+      "messages": {
+        "info": "Escolha uma nova senha",
+        "success": "<strong>Sua senha foi alterada com sucesso.</strong> Por favor ",
+        "keymissing": "A chave de redefinição de senha está ausente.",
+        "error": "Sua senha não pode ser redefinida. Lembre-se que a requisição de redefinição é somente válida por 24 horas."
+      }
+    }
+  }
+}

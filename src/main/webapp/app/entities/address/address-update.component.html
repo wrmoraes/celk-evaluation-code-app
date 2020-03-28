@@ -1,0 +1,105 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-address-heading" jhiTranslate="celkApp.address.home.createOrEditLabel">Criar ou editar um endereço</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">Código</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="celkApp.address.streetType" for="field_streetType">Tipo da Rua</label>
+                    <select class="form-control" name="streetType" formControlName="streetType" id="field_streetType">
+                        <option value="RUA">{{ 'celkApp.StreetType.RUA' | translate }}</option>
+                        <option value="AVENIDA">{{ 'celkApp.StreetType.AVENIDA' | translate }}</option>
+                        <option value="SERVIDAO">{{ 'celkApp.StreetType.SERVIDAO' | translate }}</option>
+                    </select>
+                    <div *ngIf="editForm.get('streetType')!.invalid && (editForm.get('streetType')!.dirty || editForm.get('streetType')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('streetType')?.errors?.required" jhiTranslate="entity.validation.required">
+                        Este campo é obrigatório.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="celkApp.address.streetName" for="field_streetName">Nome da Rua</label>
+                    <input type="text" class="form-control" name="streetName" id="field_streetName"
+                           formControlName="streetName"/>
+                    <div *ngIf="editForm.get('streetName')!.invalid && (editForm.get('streetName')!.dirty || editForm.get('streetName')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('streetName')?.errors?.required" jhiTranslate="entity.validation.required">
+                            Este campo é obrigatório.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('streetName')?.errors?.minlength" jhiTranslate="entity.validation.minlength" [translateValues]="{ min: 5 }">
+                            Este campo deve conter pelo meno 5 caracteres.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('streetName')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 50 }">
+                            Este campo não deve ser maior que 50 caracteres.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="celkApp.address.number" for="field_number">Número</label>
+                    <input type="number" class="form-control" name="number" id="field_number"
+                           formControlName="number"/>
+                    <div *ngIf="editForm.get('number')!.invalid && (editForm.get('number')!.dirty || editForm.get('number')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('number')?.errors?.required" jhiTranslate="entity.validation.required">
+                            Este campo é obrigatório.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('number')?.errors?.number" jhiTranslate="entity.validation.number">
+                            Este campo deve ser um número.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="celkApp.address.postalCode" for="field_postalCode">Código Postal</label>
+                    <input type="text" class="form-control" name="postalCode" id="field_postalCode"
+                           formControlName="postalCode"/>
+                    <div *ngIf="editForm.get('postalCode')!.invalid && (editForm.get('postalCode')!.dirty || editForm.get('postalCode')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('postalCode')?.errors?.required" jhiTranslate="entity.validation.required">
+                            Este campo é obrigatório.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('postalCode')?.errors?.minlength" jhiTranslate="entity.validation.minlength" [translateValues]="{ min: 5 }">
+                            Este campo deve conter pelo meno 5 caracteres.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('postalCode')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 10 }">
+                            Este campo não deve ser maior que 10 caracteres.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="celkApp.address.county" for="field_county">Município</label>
+                    <select class="form-control" id="field_county" name="county" formControlName="county">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="countyOption.id === editForm.get('county')!.value?.id ? editForm.get('county')!.value : countyOption" *ngFor="let countyOption of counties; trackBy: trackById">{{ countyOption.name }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancelar</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Salvar</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

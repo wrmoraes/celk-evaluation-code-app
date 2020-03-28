@@ -1,0 +1,81 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="celkApp.state.home.title">Estados</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-state" [routerLink]="['/state/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="celkApp.state.home.createLabel">
+            Criar um novo Estado
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="states?.length === 0">
+        <span jhiTranslate="celkApp.state.home.notFound">Nenhum Estado encontrado</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="states?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">Código</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="initials"><span jhiTranslate="celkApp.state.initials">Sigla</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="name"><span jhiTranslate="celkApp.state.name">Nome</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="createdDate"><span jhiTranslate="celkApp.state.createdDate">Criado em</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="country.name"><span jhiTranslate="celkApp.state.country">País</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let state of states ;trackBy: trackId">
+                    <td><a [routerLink]="['/state', state.id, 'view']">{{ state.id }}</a></td>
+                    <td>{{ state.initials }}</td>
+                    <td>{{ state.name }}</td>
+                    <td>{{ state.createdDate | date:'dd-MM-yyyy HH:mm:ss' }}</td>
+                    <td>
+                        <div *ngIf="state.country">
+                            <a [routerLink]="['/country', state.country?.id, 'view']" >{{ state.country?.name }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/state', state.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">Ver</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/state', state.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Editar</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(state)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Excluir</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="states?.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

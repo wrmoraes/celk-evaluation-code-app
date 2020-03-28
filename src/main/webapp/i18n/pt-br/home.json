@@ -1,0 +1,17 @@
+{
+  "home": {
+    "title": "Bem vindo, Está é sua aplicação de cadastros da avaliação CELKE!",
+    "subtitle": "Para a minha avaliação, resolvi partir para uma abordagem atualmente utilizada em várias empresas pelo mundo.\n Neste contexto, o tempo de desenvolvimento perdido em configurações e adequações a padrão são facilitadas pela ferramenta <a href=\"https://www.jhipster.tech/\" target=\"_blank\" rel=\"noopener noreferrer\">JHipster</a>.\n Não é necessário reiventar a roda para contruir um carro potente!",
+    "logged": {
+      "message": "Você está logado como \"{{username}}\"."
+    },
+    "question": "Se você tem alguma dúvida:",
+    "link": {
+      "homepage": "Página principal do Projeto no Github",
+      "email": "Entre em contato por email.",
+      "follow_linkedin": "Conecte-se comigo no Linkedin."
+    },
+    "like": "Se você gostou, confira o código no",
+    "github": "GitHub"
+  }
+}

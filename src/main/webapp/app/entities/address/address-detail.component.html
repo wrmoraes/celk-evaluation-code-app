@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="address">
+            <h2><span jhiTranslate="celkApp.address.detail.title">Endereço</span> {{ address.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="celkApp.address.streetType">Tipo da Rua</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'celkApp.StreetType.' + address.streetType }}">{{ address.streetType }}</span>
+                </dd>
+                <dt><span jhiTranslate="celkApp.address.streetName">Nome da Rua</span></dt>
+                <dd>
+                    <span>{{ address.streetName }}</span>
+                </dd>
+                <dt><span jhiTranslate="celkApp.address.number">Número</span></dt>
+                <dd>
+                    <span>{{ address.number }}</span>
+                </dd>
+                <dt><span jhiTranslate="celkApp.address.postalCode">Código Postal</span></dt>
+                <dd>
+                    <span>{{ address.postalCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="celkApp.address.county">Município</span></dt>
+                <dd>
+                    <div *ngIf="address.county">
+                        <a [routerLink]="['/county', address.county?.id, 'view']">{{ address.county?.name }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Voltar</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/address', address.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editar</span>
+            </button>
+        </div>
+    </div>
+</div>

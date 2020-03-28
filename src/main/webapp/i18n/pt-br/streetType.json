@@ -1,0 +1,10 @@
+{
+  "celkApp": {
+    "StreetType": {
+      "null": "",
+      "RUA": "RUA",
+      "AVENIDA": "AVENIDA",
+      "SERVIDAO": "SERVIDAO"
+    }
+  }
+}

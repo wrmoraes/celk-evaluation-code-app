@@ -1,0 +1,32 @@
+{
+  "settings": {
+    "title": "Configurações para o usuário [<strong>{{username}}</strong>]",
+    "form": {
+      "firstname": "Nome",
+      "firstname.placeholder": "Seu nome",
+      "lastname": "Sobrenome",
+      "lastname.placeholder": "Seu sobrenome",
+      "language": "Idioma",
+      "button": "Salvar"
+    },
+    "messages": {
+      "error": {
+        "fail": "<strong>Ocorreu um erro!</strong> As configurações não foram salvas.",
+        "emailexists": "<strong>Email já cadastrado!</strong> Por favor escolha outro."
+      },
+      "success": "<strong>Configurações salvas com sucesso!</strong>",
+      "validate": {
+        "firstname": {
+          "required": "Seu nome é obrigatório.",
+          "minlength": "Seu nome deve ter pelo menos 1 caractere",
+          "maxlength": "Seu nome não pode ter mais de 50 caracteres"
+        },
+        "lastname": {
+          "required": "Seu sobrenome é obrigatório.",
+          "minlength": "Seu sobrenome deve ter pelo menos 1 caractere",
+          "maxlength": "Seu sobrenome não pode ter mais de 50 caracteres"
+        }
+      }
+    }
+  }
+}

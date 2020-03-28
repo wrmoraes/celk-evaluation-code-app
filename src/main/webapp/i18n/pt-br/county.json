@@ -1,0 +1,24 @@
+{
+  "celkApp": {
+    "county": {
+      "home": {
+        "title": "Município",
+        "createLabel": "Criar novo Município",
+        "createOrEditLabel": "Criar ou editar Município",
+        "notFound": "Nenhum Município encontrado"
+      },
+      "created": "Um novo Município foi criado com o identificador {{ param }}",
+      "updated": "Um Município foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Município foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir o Município {{ id }}?"
+      },
+      "detail": {
+        "title": "Município"
+      },
+      "name": "Nome",
+      "createdDate": "Criado em",
+      "state": "Estado"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-md-3">
+        <span class="hipster img-fluid rounded"></span>
+    </div>
+
+    <div class="col-md-9">
+        <h1 class="display-4" jhiTranslate="home.title">Bem vindo, Está é sua aplicação de cadastros da avaliação CELKE!</h1>
+
+        <p class="lead" jhiTranslate="home.subtitle">
+            Para a minha avaliação, resolvi partir para uma abordagem atualmente utilizada em várias empresas pelo mundo.
+            Neste contexto, o tempo de desenvolvimento perdido em configurações e adequações a padrão são facilitadas pela
+            ferramenta <a href="https://www.jhipster.tech/" target="_blank" rel="noopener noreferrer">JHipster</a>.
+            Não é necessário reiventar a roda para contruir um carro potente!
+        </p>
+
+        <div [ngSwitch]="isAuthenticated()">
+            <div class="alert alert-success" *ngSwitchCase="true">
+                <span id="home-logged-message" *ngIf="account" jhiTranslate="home.logged.message"
+                    [translateValues]="{ username: account.login }">Você está logado como: "{{ account.login }}".</span>
+            </div>
+
+            <div class="alert alert-warning" *ngSwitchCase="false">
+                <span jhiTranslate="global.messages.info.authenticated.prefix">Se você deseja </span>
+                <a class="alert-link" (click)="login()" jhiTranslate="global.messages.info.authenticated.link">entrar</a><span jhiTranslate="global.messages.info.authenticated.suffix">, você pode tentar utilizar as contas padrão:<br/>- Administrador (login="admin" e senha="admin") <br/>- Usuário (login="user" e senha="user").</span>
+            </div>
+
+            <div class="alert alert-warning" *ngSwitchCase="false">
+                <span jhiTranslate="global.messages.info.register.noaccount">Ainda não tem uma conta?</span>&nbsp;
+                <a class="alert-link" routerLink="account/register" jhiTranslate="global.messages.info.register.link">Registrar uma nova conta</a>
+            </div>
+        </div>
+
+        <p jhiTranslate="home.question">
+            Se você tem alguma dúvida:
+        </p>
+
+        <ul>
+            <li><a href="mailto:willian_200@hotmail.com" target="_blank" rel="noopener noreferrer" jhiTranslate="home.link.email">Entre em contato por email.</a></li>
+            <li><a href="https://www.linkedin.com/in/willmoraes/" target="_blank" rel="noopener noreferrer" jhiTranslate="home.link.follow_linkedin">Conecte-se comigo no Linkedin.</a></li>
+        </ul>
+
+        <p>
+            <span jhiTranslate="home.like">Se você gostou, confira o código no </span> <a href="https://github.com/wrmoraes" target="_blank" rel="noopener noreferrer" jhiTranslate="home.github">GitHub</a>!
+        </p>
+    </div>
+</div>

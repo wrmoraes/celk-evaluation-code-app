@@ -1,0 +1,37 @@
+entity Country{
+	name String required minlength(5) maxlength(50),
+    createdDate Instant required
+}
+entity State {
+	initials String required minlength(2) maxlength(2),
+    name String required minlength(4) maxlength(50),
+    createdDate Instant required
+}
+
+entity County{
+	name String required minlength(4) maxlength(50),
+    createdDate Instant required
+}
+
+entity Address{
+	streetType StreetType required,
+    streetName String required minlength(5) maxlength(50),
+    number Integer required,
+    postalCode String required minlength(5) maxlength(10),
+}
+
+enum StreetType {
+    RUA, AVENIDA, SERVIDAO
+}
+
+relationship OneToMany{
+	Country{state(name)} to State{country(name)},
+    State{county(name)} to County{state(name)}
+}
+
+relationship ManyToOne{
+	Address{county(name)} to County,
+}
+
+paginate Address with infinite-scroll
+paginate Country, State, County  with pagination

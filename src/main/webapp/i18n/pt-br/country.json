@@ -1,0 +1,24 @@
+{
+  "celkApp": {
+    "country": {
+      "home": {
+        "title": "Países",
+        "createLabel": "Criar novo País",
+        "createOrEditLabel": "Criar ou editar País",
+        "notFound": "Nenhum País encontrado"
+      },
+      "created": "Um novo País foi criado com o identificador {{ param }}",
+      "updated": "Um País foi atualizado com o identificador {{ param }}",
+      "deleted": "Um País foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir o País {{ id }}?"
+      },
+      "detail": {
+        "title": "País"
+      },
+      "name": "Nome",
+      "createdDate": "Criado em",
+      "state": "Estado"
+    }
+  }
+}

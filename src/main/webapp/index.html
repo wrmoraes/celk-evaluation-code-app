@@ -1,0 +1,89 @@
+<!doctype html>
+<html class="no-js" lang="pt-br" dir="ltr">
+<head>
+    <base href="/" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>celk</title>
+    <meta name="description" content="Description for celk">
+    <meta name="google" content="notranslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="manifest" href="manifest.webapp" />
+    <link rel="stylesheet" href="content/css/loading.css">
+    <!-- jhipster-needle-add-resources-to-root - JHipster will add new resources here -->
+</head>
+<body>
+    <!--[if lt IE 9]>
+        <p class="browserupgrade">Você está usando um navegador <strong>desatualizado</strong>. Favor <a href="http://browsehappy.com/?locale=pt_BR">atualize o seu navegador</a> para ter uma experiência melhor.</p>
+    <![endif]-->
+    <jhi-main>
+        <div class="app-loading">
+            <div class="lds-css ng-scope">
+                <div class="lds-pacman">
+                    <div><div></div><div></div><div></div></div>
+                    <div><div></div><div></div><div></div></div>
+                </div>
+            </div>
+        </div>
+        <div class="app-loading">
+            <div id="jhipster-error" style="display:none">
+                <!-- This content is for troubleshooting purpose and will be removed when app renders -->
+                <h1>Aconteceu um imprevisto! :-(</h1>
+                <h2>Causas comuns para o erro</h2>
+                <ol>
+                    <li>Você inicou a aplicação pela sua ide e não rodou <code style="color:red">npm start</code> ou <code style="color:red">npm run webpack:build</code>.</li>
+                    <li>Aconteceu algum erro na rede enquanto rodava <code style="color:red">npm install</code>. Se você está por trás de um proxy corporativo, é posível que esse erro tenha sido causado pelo seu proxy. Dê uma olhada nos logs da aplicação, você provavelmente encontrará a causa por lá.</li>
+                    <li>Sua versão instalada do Node.js não funciona bem com o JHipster: favor usar uma versão LTS (Suporte a longo prazo), estas são as únicas suportadas.</li>
+                </ol>
+                <h2>Buildando o código do lado do cliente</h2>
+                <p>Se você quer ir rápido, rode <code style="color:red">./mvnw</code> para buildar e rodar tudo.</p>
+                <p>Se você deseja mais controle, com isso debugar o build mais facilmente, você deve seguir os seguintes passos:</p>
+                <ol>
+                    <li>Instalar as dependência do npm com o comando <code style="color:red">npm install</code></li>
+                    <li>Builda a aplicação cliente com o comando <code style="color:red">npm run webpack:build</code> ou <code style="color:red">npm start</code></li>
+                    <li>Iniciar o servidor com <code style="color:red">./mvnw</code> ou usando sua IDE</li>
+                </ol>
+                <!-- end of troubleshooting content -->
+            </div>
+        </div>
+    </jhi-main>
+    <noscript>
+        <h1>You must enable javascript to view this page.</h1>
+    </noscript>
+    <script type="text/javascript" language="javascript">
+        // show an error message if the app loading takes more than 5 sec
+        window.onload=function() {
+            setTimeout(showError, 4000);
+        }
+        function showError() {
+            var errorElm = document.getElementById("jhipster-error");
+            if (errorElm && errorElm.style) {
+                errorElm.style.display = "block";
+            }
+        }
+    </script>
+    <!-- uncomment this for adding service worker
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                    navigator.serviceWorker.register('/service-worker.js')
+                        .then(function () {
+                            console.log('Service Worker Registered');
+                        });
+                });
+            }
+        </script>
+    -->
+    <!-- Google Analytics: uncomment and change UA-XXXXX-X to be your site's ID.
+    <script>
+        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+        ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>-->
+</body>
+</html>
