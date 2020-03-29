@@ -1,4 +1,4 @@
-# CELK APP - CADASTROS - AVALIAÇÃO by Wmoraes
+# CELK APP - CADASTROS - AVALIAÇÃO
 
 Bem vindo.
 
@@ -25,6 +25,17 @@ Este app foi construído para a avaliação de desenvolimento na empresa CELK SI
 >     data e hora atualizadas;
 
 ## Desenvolvimento
+
+### Tecnologia
+
+-[X] Preferencialmente em JavaEE. Springboot como segunda alternativa; -> *SpringBoot*
+-[X] Bootstrap;
+-[ ] AngularJS / Angular 1.7; -> *ANGULAR 9* 😭
+-[X] Hibernate/JPAD; 
+-[X] TypeScript;
+-[X] SCSS;
+-[ ] Seguir o style: https://github.com/toddmotto/angularjs-styleguide; -> *Parcialmente atendido*
+-[X] Teste unitário.
 
 Após as definições do Escopo tratadas no dia 25/03/2020 ás 12:00, iniciei o desenvolvimento. Inicialmente a minha ideia foi contruir uma estrutura provedora de serviços via REST, sendo está aplicação a fonte que
 seria utilizadas posteriormente pelo Frontend para as ações.
@@ -141,7 +152,7 @@ Os testes unitários são executados pelo [Jest][] e escritos com [Jasmine][]. E
 
 ### Qualidade de Código
 
-O Sonar foi utilizado como analizados de qualidade de código. Você pode iniciar um servidor Sonar local(ficará disponívem em http://localhost:9001) com o comando:
+O Sonar foi utilizado como analizados de qualidade de código. Você pode iniciar um servidor Sonar local(ficará disponível em http://localhost:9001) com o comando:
 
 ```
 docker-compose -f src/main/docker/sonar.yml up -d
@@ -183,7 +194,21 @@ Então rode:
 
     docker-compose -f src/main/docker/app.yml up -d
 
-## TODO\*\*
+## TODO
+* Internacionalizar as mensagens nos logs do backend.
+* Modificar as telas de cadastro par adicionar as entidades na mesma tela da listagem.
+* Separar a aplicação de forma a subir como dois serviços separados.
+* Melhorar templates de email.
+* Incluir ferramenta de cache para otimizar atividades de autenticação com login.
+* Otimizar as classe de backend incluindo lombook para diminuir o Boilerplate.
+* Acrescentar máscara no campo CEP da entidade endereço.
+* Adicionar Data e Hora da criação no endereço.
+* Melhorar as classes de SCss utilizando melhor as variáveis.
+
+## Meta
+Willian Robson Moraes 😜 – [LINKEDIN][https://www.linkedin.com/in/willmoraes] – <willian_200@hotmail.com>
+
+https://github.com/wrmoraes/celk-evaluation-code-app
 
 Ficou interessado na ferramenta que utilizei?
 Conheça ela em [jhipster]: https://www.jhipster.tech
