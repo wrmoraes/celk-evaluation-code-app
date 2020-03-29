@@ -28,14 +28,14 @@ Este app foi construído para a avaliação de desenvolimento na empresa CELK SI
 
 ### Tecnologia
 
--[X] Preferencialmente em JavaEE. Springboot como segunda alternativa; -> *SpringBoot*
--[X] Bootstrap;
--[ ] AngularJS / Angular 1.7; -> *ANGULAR 9* 😭
--[X] Hibernate/JPAD; 
--[X] TypeScript;
--[X] SCSS;
--[ ] Seguir o style: https://github.com/toddmotto/angularjs-styleguide; -> *Parcialmente atendido*
--[X] Teste unitário.
+- [X] Preferencialmente em JavaEE. Springboot como segunda alternativa; -> *SpringBoot*
+- [X] Bootstrap;
+- [ ] AngularJS / Angular 1.7; -> *ANGULAR 9* 😭
+- [X] Hibernate/JPAD; 
+- [X] TypeScript;
+- [X] SCSS;
+- [ ] Seguir o style: https://github.com/toddmotto/angularjs-styleguide; -> *Parcialmente atendido*
+- [X] Teste unitário.
 
 Após as definições do Escopo tratadas no dia 25/03/2020 ás 12:00, iniciei o desenvolvimento. Inicialmente a minha ideia foi contruir uma estrutura provedora de serviços via REST, sendo está aplicação a fonte que
 seria utilizadas posteriormente pelo Frontend para as ações.
