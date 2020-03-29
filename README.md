@@ -63,7 +63,7 @@ Como diz uma frase muito usada na programação :
 
 Antes de inciar o processo de Buld da aplicação, você deve instalar e configurar as seguintes dependências em seu ambiente:
 
-1. [Node.js][]: Utilizamos o Node para rodar um servidor web e buildar o projeto.
+1. [Node.js](Node.js): Utilizamos o Node para rodar um servidor web e buildar o projeto.
    Dependendo do seu sistema, você pode instalar o Node direto da fonte ou de um pacote pré-empacotado.
 
 Após instalar o Node, você poderá executar o seguinte comando para instalar as ferramentas de desenvolvimento.
@@ -71,7 +71,7 @@ Você só necessitará executar este comando quando as dependências mudarem em 
 
     npm install
 
-Foi utilizado scripts npm e [Webpack][] como nosso compilador.
+Foi utilizado scripts npm e [Webpack](Webpack) como nosso compilador.
 
 Rode os seguintes comandos em dois terminais separados para criar uma experiência de desenvolvimento mais otimizada onde o navegador
 atualizará de forma automática quando os arquivos do frontend forem modificados em sua IDE ou na pasta.
@@ -104,7 +104,7 @@ Nota: [Workbox](https://developers.google.com/web/tools/workbox/) foi utilizado 
 
 ### Usando o Angular CLI
 
-Você pode usar o [Angular CLI][] para gerar códigos customizados na aplicação cliente.
+Você pode usar o [Angular CLI](Angular CLI) para gerar códigos customizados na aplicação cliente.
 
 Por exemplo, o seguinte comando:
 
@@ -146,7 +146,7 @@ Para rodar os testes da aplicação, rode:
 
 ### Testes do cliente
 
-Os testes unitários são executados pelo [Jest][] e escritos com [Jasmine][]. Eles estão localizados em [src/test/javascript/](src/test/javascript/) e podem ser exeutados com:
+Os testes unitários são executados pelo [Jest](Jest) e escritos com [Jasmine](Jasmine). Eles estão localizados em [src/test/javascript/](src/test/javascript/) e podem ser exeutados com:
 
     npm test
 
@@ -206,9 +206,9 @@ Então rode:
 * Melhorar as classes de SCss utilizando melhor as variáveis.
 
 ## Meta
-Willian Robson Moraes 😜 – [LINKEDIN][https://www.linkedin.com/in/willmoraes] – <willian_200@hotmail.com>
+Willian Robson Moraes 😜 – [LINKEDIN](https://www.linkedin.com/in/willmoraes) – <willian_200@hotmail.com>
 
 https://github.com/wrmoraes/celk-evaluation-code-app
 
 Ficou interessado na ferramenta que utilizei?
-Conheça ela em [jhipster]: https://www.jhipster.tech
+Conheça ela em [jhipster](https://www.jhipster.tech)
